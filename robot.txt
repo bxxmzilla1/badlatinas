@@ -25,3 +25,5 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
+Sitemap: https://badlatina.com/sitemap.xml
+
