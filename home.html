@@ -1,12 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bad Latina Big Ass Porn</title>
-    <meta name="description" content="Bad Latina Porn videos xxx">
-    <meta name="keywords" content="bad latina, videos, xxx, porn, latina, big, ass, cum">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BadLatina - Video Player</title>
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -14,901 +13,1801 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #1a1a1a;
-            color: white;
-            line-height: 1.6;
+            background-color: #000;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            padding: 0;
+            margin: 0;
+            min-height: 100vh;
         }
 
-        /* Header Styles */
-        .header {
-            background-color: #1a1a1a;
-            padding: 15px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid #333;
+        .page-wrapper {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 428px;
+            margin: 0 auto;
+            background-color: #000;
             position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 150px;
         }
 
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            position: absolute;
-            left: 20px;
+        /* Header */
+        .header {
+            padding: 10px 20px 0;
+            text-align: left;
+            position: sticky;
+            top: 0;
+            z-index: 1002;
+            background-color: #000;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 16px;
             font-weight: bold;
+            color: #fff;
+            display: inline-block;
         }
 
-        .logo .bad {
-            color: white;
-        }
-
-        .logo .latina {
-            color: white;
-            position: relative;
-        }
-
-        .logo .latina::after {
-            content: '●';
-            color: #ff6600;
-            position: absolute;
-            top: -2px;
-            right: -8px;
-            font-size: 12px;
-        }
-
-        .search-bar {
-            flex: 1;
-            max-width: 400px;
-            margin: 0 20px;
-        }
-
-        .search-container {
-            position: relative;
-            width: 100%;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 10px 15px 10px 45px;
-            background-color: #333;
-            border: none;
-            border-radius: 5px;
-            color: #ccc;
-            font-size: 14px;
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #888;
-            width: 20px;
-            height: 20px;
-            pointer-events: none;
-        }
-
-        .search-input::placeholder {
-            color: #888;
-        }
-
-        /* Navigation Styles */
-        .navigation {
-            background-color: #1a1a1a;
-            border-bottom: 1px solid #333;
-            overflow-x: auto;
-            white-space: nowrap;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        .navigation::-webkit-scrollbar {
-            display: none;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            justify-content: space-between;
-            width: 100%;
-            padding: 0 20px;
-            min-width: max-content;
-        }
-
-        .nav-links li a {
-            color: white;
-            text-decoration: none;
-            padding: 15px 0;
+        .logo img {
+            max-height: 35px;
+            width: auto;
             display: block;
-            font-weight: bold;
-            position: relative;
-            white-space: nowrap;
-            flex-shrink: 0;
         }
 
-        .nav-links li a.active {
-            color: #ff6600;
-        }
-
-        .nav-links li a.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background-color: #ff6600;
-        }
-
-        /* Main Content */
-        .main-content {
-            display: flex;
-            padding: 20px;
-            gap: 20px;
-        }
-
-        .content-area {
-            flex: 1;
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .video-item {
-            background-color: #1a1a1a;
-        }
-
-        .video-thumbnail {
-            background-color: #333;
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
-
-        .model-name {
-            color: white;
-            font-weight: bold;
-            margin-bottom: 5px;
-            font-size: 12px;
+        .header-nearby {
             display: flex;
             align-items: center;
             gap: 5px;
         }
 
-        .verified-icon {
+        .header-nearby svg {
+            color: #fff;
+        }
+
+        .nearby-text {
+            font-size: 14px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* Clip Section */
+        .clip-section {
+            cursor: pointer;
+            margin-bottom: 40px;
+        }
+
+        /* Small Section Above Video */
+        .above-video-section {
+            margin: 5px 20px 20px 20px;
+            padding: 4px 0;
+            border-top: 1px solid #333;
+            padding-top: 14px;
+        }
+
+        .section-content {
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            gap: 5px;
+            margin-left: -5px;
+        }
+
+        .section-content .creator-name {
+            font-size: 14px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .section-content .verified-badge {
+            width: 14px;
+            height: 14px;
+        }
+
+        .section-content .verified-badge::after {
+            font-size: 8px;
+        }
+
+        .section-content svg {
             width: 16px;
             height: 16px;
-            color: #0066ff;
-            flex-shrink: 0;
+            color: #2196F3;
         }
 
-        .video-title {
-            color: white;
-            font-weight: bold;
-            margin-bottom: 5px;
+        /* Video Player */
+        .video-container {
+            margin: 0 0 5px 0;
+            width: 100%;
+            position: relative;
+            border: none;
+            border-radius: 0;
+            background-color: #000;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .video-container-square {
+            aspect-ratio: 1 / 1;
+            max-width: 320px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+
+        .video-container-square .video-screen {
+            aspect-ratio: 1 / 1;
+            display: none;
+        }
+
+        .video-container-square iframe {
+            display: none;
+        }
+
+        .send-message-section {
+            background-color: #ff9800;
+            padding: 12px 20px;
+            text-align: center;
+            margin: 15px 0 0;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .send-message-text {
+            color: #fff;
             font-size: 14px;
+            font-weight: 600;
         }
 
-        .video-meta {
-            color: #888;
-            font-size: 12px;
+        .load-more-button {
+            background-color: #ff9800;
+            color: #fff;
+            padding: 18px 40px;
+            text-align: center;
+            margin: 20px auto;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            display: block;
+            max-width: 428px;
+        }
+
+        .video-screen {
+            background-color: #000;
+            width: 100%;
+            height: auto;
+            min-height: 250px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-screen iframe {
+            width: 100%;
+            height: 250px;
+            min-height: 250px;
+            border: none;
+            display: block;
+            object-fit: cover;
+        }
+
+        .video-controls {
+            background-color: #333;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .control-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .control-icon {
+            cursor: pointer;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .progress-bar-container {
+            flex: 1;
+            height: 4px;
+            background-color: #555;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #ff0000;
+            border-radius: 2px;
+            width: 33%;
+        }
+
+
+
+        /* Ad Section */
+        .ad-container {
+            display: none;
+        }
+
+        .ad-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .ad-text {
+            color: #000;
+            font-weight: bold;
+            font-size: 18px;
         }
 
         /* Sidebar */
         .sidebar {
-            width: 250px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        .ad-block {
-            background-color: #8b4513;
-            height: 300px;
-            margin-bottom: 20px;
-            border-radius: 5px;
+        .profile-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2196F3 0%, #FF9800 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0;
+            margin-right: 10px;
+        }
+
+        .profile-icon svg {
+            width: 60%;
+            height: 60%;
+        }
+
+        .action-button {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
+            gap: 0px;
+            cursor: pointer;
         }
 
-        .ad-block .ad-text {
+        .icon-button {
+            width: auto;
+            height: auto;
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .count {
+            font-size: 12px;
+            color: #fff;
+            font-weight: 600;
+            margin-top: -2px;
+        }
+
+        /* Video Details Row */
+        .video-details-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin: -10px 20px 20px;
+        }
+
+        .video-info {
+            flex: 1;
+        }
+
+        .sidebar-navigation {
+            display: none;
+        }
+
+        /* Mobile Layout (up to 767px) */
+        @media (max-width: 767px) {
+            .container {
+                max-width: 100%;
+                margin: 0;
+                padding-left: 0;
+                padding-right: 0;
+                padding-bottom: 150px;
+                width: 100vw;
+            }
+
+            .header {
+                padding: 10px 15px 0;
+                text-align: left;
+                position: sticky;
+                top: 0;
+                z-index: 1002;
+                background-color: #000;
+            }
+
+            .video-container {
+                margin: 0;
+                width: 100vw;
+                left: 0;
+                right: 0;
+                position: relative;
+                max-width: none;
+                border: none;
+            }
+
+            .video-screen {
+                width: 100%;
+                height: auto;
+                min-height: 250px;
+            }
+
+            .video-screen iframe {
+                width: 100%;
+                height: 250px;
+                min-height: 250px;
+            }
+
+        .video-details-row {
+            margin: 15px 15px 0;
+            padding: 0;
+        }
+
+        .video-info {
+            max-width: 100%;
+            margin-bottom: 0px;
+        }
+
+            .video-info {
+                max-width: 100%;
+                margin-bottom: 0px;
+            }
+
+            .ad-container {
+                display: none;
+            }
+
+            .sidebar-navigation {
+                display: none;
+            }
+        }
+
+        /* Small Desktop Layout (768px - 1023px) - DISABLED */
+        /* @media (min-width: 768px) and (max-width: 1023px) {
+            .container {
+                padding-bottom: 0;
+            }
+            .header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                padding: 20px;
+                z-index: 1001;
+            }
+
+            .video-details-row {
+                margin: -10px 20px 20px;
+                position: relative;
+            }
+
+            .video-info {
+                position: fixed;
+                left: 20px;
+                top: 100px;
+                z-index: 1000;
+                max-width: 300px;
+            }
+
+            .video-info .video-creator {
+                gap: 8px;
+                margin-bottom: 12px;
+            }
+
+            .video-info .creator-name {
+                font-size: 18px;
+            }
+
+            .video-info .profile-icon {
+                width: 45px;
+                height: 45px;
+            }
+
+            .video-info .video-title {
+                font-size: 24px;
+                margin-bottom: 10px;
+                line-height: 1.3;
+            }
+
+            .video-info .video-tags {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+
+            .video-info .engagement-stats {
+                gap: 25px;
+                margin-top: 15px;
+            }
+
+            .video-info .stat-item svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .video-info .stat-item .count {
+                font-size: 18px;
+            }
+
+            .video-info .verified-badge {
+                width: 18px;
+                height: 18px;
+            }
+
+            .ad-container {
+                position: fixed;
+                left: 20px;
+                bottom: 120px;
+                width: 300px;
+                height: 180px;
+                margin: 0;
+                padding: 0;
+                z-index: 1000;
+            }
+
+            .ad-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .video-container {
+                position: fixed;
+                right: 150px;
+                top: 80px;
+                width: calc(100vw - 600px);
+                height: calc(100vh - 200px);
+                max-width: 500px;
+                max-height: calc(100vh - 200px);
+                z-index: 999;
+            }
+
+            .video-container .video-screen iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+                display: block;
+                object-fit: cover;
+            }
+
+            .sidebar-navigation {
+                position: fixed;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 1000;
+                padding-right: 20px;
+            }
+        } */
+
+        /* Medium Desktop Layout (1024px - 1199px) - DISABLED */
+        /* @media (min-width: 1024px) and (max-width: 1199px) {
+            .container {
+                padding-bottom: 0;
+            }
+            .header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                padding: 20px;
+                z-index: 1001;
+            }
+
+            .video-details-row {
+                margin: -10px 20px 20px;
+                position: relative;
+            }
+
+            .video-info {
+                position: fixed;
+                left: 20px;
+                top: 100px;
+                z-index: 1000;
+                max-width: 350px;
+            }
+
+            .video-info .video-creator {
+                gap: 8px;
+                margin-bottom: 12px;
+            }
+
+            .video-info .creator-name {
+                font-size: 20px;
+            }
+
+            .video-info .profile-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .video-info .video-title {
+                font-size: 28px;
+                margin-bottom: 10px;
+                line-height: 1.3;
+            }
+
+            .video-info .video-tags {
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+
+            .video-info .engagement-stats {
+                gap: 30px;
+                margin-top: 15px;
+            }
+
+            .video-info .stat-item svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            .video-info .stat-item .count {
+                font-size: 20px;
+            }
+
+            .video-info .verified-badge {
+                width: 20px;
+                height: 20px;
+            }
+
+            .ad-container {
+                position: fixed;
+                left: 20px;
+                bottom: 120px;
+                width: 350px;
+                height: 200px;
+                margin: 0;
+                padding: 0;
+                z-index: 1000;
+            }
+
+            .ad-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .video-container {
+                position: fixed;
+                right: 200px;
+                top: 80px;
+                width: calc(100vw - 700px);
+                height: calc(100vh - 200px);
+                max-width: 600px;
+                max-height: calc(100vh - 200px);
+                z-index: 999;
+            }
+
+            .video-container .video-screen iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+                display: block;
+                object-fit: cover;
+            }
+
+            .sidebar-navigation {
+                position: fixed;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 1000;
+                padding-right: 20px;
+            }
+        } */
+
+        /* Large Desktop Layout (1200px - 1599px) - DISABLED */
+        /* @media (min-width: 1200px) and (max-width: 1599px) {
+            .container {
+                padding-bottom: 0;
+            }
+            .header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                padding: 20px;
+                z-index: 1001;
+            }
+
+            .video-details-row {
+                margin: -10px 20px 20px;
+                position: relative;
+            }
+
+            .video-info {
+                position: fixed;
+                left: 20px;
+                top: 100px;
+                z-index: 1000;
+                max-width: 400px;
+            }
+
+            .video-info .video-creator {
+                gap: 8px;
+                margin-bottom: 12px;
+            }
+
+            .video-info .creator-name {
+                font-size: 22px;
+            }
+
+            .video-info .profile-icon {
+                width: 55px;
+                height: 55px;
+            }
+
+            .video-info .video-title {
+                font-size: 32px;
+                margin-bottom: 10px;
+                line-height: 1.3;
+            }
+
+            .video-info .video-tags {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+
+            .video-info .engagement-stats {
+                gap: 35px;
+                margin-top: 15px;
+            }
+
+            .video-info .stat-item svg {
+                width: 32px;
+                height: 32px;
+            }
+
+            .video-info .stat-item .count {
+                font-size: 22px;
+            }
+
+            .video-info .verified-badge {
+                width: 22px;
+                height: 22px;
+            }
+
+            .ad-container {
+                position: fixed;
+                left: 20px;
+                bottom: 120px;
+                width: 400px;
+                height: 250px;
+                margin: 0;
+                padding: 0;
+                z-index: 1000;
+            }
+
+            .ad-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .video-container {
+                position: fixed;
+                right: 200px;
+                top: 80px;
+                width: calc(100vw - 800px);
+                height: calc(100vh - 200px);
+                max-width: 700px;
+                max-height: calc(100vh - 200px);
+                z-index: 999;
+            }
+
+            .video-container .video-screen iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+                display: block;
+                object-fit: cover;
+            }
+
+            .sidebar-navigation {
+                position: fixed;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 1000;
+                padding-right: 20px;
+            }
+        } */
+
+        /* Extra Large Desktop Layout (1600px+) - DISABLED */
+        /* @media (min-width: 1600px) {
+            .container {
+                padding-bottom: 0;
+            }
+            .header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                padding: 20px;
+                z-index: 1001;
+            }
+
+            .video-details-row {
+                margin: -10px 20px 20px;
+                position: relative;
+            }
+
+            .video-info {
+                position: fixed;
+                left: 20px;
+                top: 100px;
+                z-index: 1000;
+                max-width: 450px;
+            }
+
+            .video-info .video-creator {
+                gap: 8px;
+                margin-bottom: 12px;
+            }
+
+            .video-info .creator-name {
+                font-size: 24px;
+            }
+
+            .video-info .profile-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .video-info .video-title {
+                font-size: 36px;
+                margin-bottom: 10px;
+                line-height: 1.3;
+            }
+
+            .video-info .video-tags {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+
+            .video-info .engagement-stats {
+                gap: 40px;
+                margin-top: 15px;
+            }
+
+            .video-info .stat-item svg {
+                width: 36px;
+                height: 36px;
+            }
+
+            .video-info .stat-item .count {
+                font-size: 24px;
+            }
+
+            .video-info .verified-badge {
+                width: 24px;
+                height: 24px;
+            }
+
+            .ad-container {
+                position: fixed;
+                left: 20px;
+                bottom: 120px;
+                width: 450px;
+                height: 300px;
+                margin: 0;
+                padding: 0;
+                z-index: 1000;
+            }
+
+            .ad-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .video-container {
+                position: fixed;
+                right: 200px;
+                top: 80px;
+                width: calc(100vw - 900px);
+                height: calc(100vh - 200px);
+                max-width: 800px;
+                max-height: calc(100vh - 200px);
+                z-index: 999;
+            }
+
+            .video-container .video-screen iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+                display: block;
+                object-fit: cover;
+            }
+
+            .sidebar-navigation {
+                position: fixed;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 1000;
+                padding-right: 20px;
+            }
+        } */
+
+        /* Ultra-wide Desktop Layout (1920px+) - DISABLED */
+        /* @media (min-width: 1920px) {
+            .video-container {
+                max-width: 900px;
+            }
+            
+            .video-info {
+                max-width: 500px;
+            }
+            
+            .ad-container {
+                width: 500px;
+                height: 350px;
+            }
+        } */
+
+        /* Safety margins for very small desktop screens - DISABLED */
+        /* @media (min-width: 768px) and (max-width: 900px) {
+            .video-container {
+                right: 100px;
+                width: calc(100vw - 500px);
+                max-width: 400px;
+            }
+            
+            .video-info {
+                max-width: 250px;
+            }
+            
+            .ad-container {
+                width: 250px;
+                height: 150px;
+            }
+        } */
+
+        .nav-button-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px;
+        }
+
+        .nav-button-group .nav-label {
+            font-size: 12px;
+            color: #fff;
+            text-align: center;
+            margin-top: -2px;
+        }
+
+        .video-creator {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 8px;
+        }
+
+        .creator-name {
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .clickable-model {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .verified-badge {
+            width: 12px;
+            height: 12px;
+            background-color: #2196F3;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .verified-badge::after {
+            content: '✓';
+            color: #fff;
+            font-size: 8px;
+            font-weight: bold;
+        }
+
+        .small-iframe-container {
+            display: inline-block;
+            margin-left: -5px;
+            margin-top: 2px;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        .small-iframe-container iframe {
+            border-radius: 4px;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+            transform: scale(1);
+            transform-origin: top left;
+        }
+
+        .small-iframe-container iframe::-webkit-scrollbar {
+            display: none; /* WebKit browsers */
+        }
+
+        .video-title {
             font-size: 18px;
             font-weight: bold;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .video-tags {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        /* Engagement Stats */
+        .engagement-stats {
+            display: flex;
+            gap: 20px;
+            align-items: center;
             margin-top: 10px;
         }
 
-        .ad-block .ad-label {
-            font-size: 12px;
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .stat-item svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .stat-item .count {
+            font-size: 14px;
+            color: #fff;
+            margin: 0;
+        }
+
+        /* Navigation Arrow Buttons */
+        .nav-arrow-button {
+            background-color: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+
+        .nav-arrow-button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .nav-arrow-button:active {
+            transform: scale(0.95);
+        }
+
+        .nav-arrow-button svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #111;
+            border-top: 1px solid #333;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0 20px;
+            z-index: 100;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 20px;
+            transition: color 0.2s;
+        }
+
+        .nav-item:hover {
+            color: #ffeb3b;
+        }
+
+        .nav-item.active {
+            color: #ff9800;
+        }
+
+        .nav-item.active:hover {
+            color: #ff9800;
             opacity: 0.8;
         }
 
-        /* Footer */
-        .footer {
-            background-color: #1a1a1a;
-            padding: 30px 20px;
-            text-align: center;
-            border-top: 1px solid #333;
-        }
-
-        .footer-description {
-            color: white;
-            margin-bottom: 20px;
-            max-width: 1400px;
-            margin-left: auto;
-            margin-right: auto;
+        .nav-label {
             font-size: 12px;
-            line-height: 1.4;
+            margin-top: 2px;
         }
 
-        .copyright {
-            color: #ff6600;
-            font-weight: bold;
-            font-size: 12px;
-        }
-
-        /* Pagination Styles */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            padding: 30px 0;
-            background-color: #1a1a1a;
-        }
-
-        .pagination button {
-            background-color: #333;
-            color: #ccc;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            min-width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .pagination button:hover {
-            background-color: #444;
-            color: white;
-        }
-
-        .pagination button.next {
-            background-color: #ff6600;
-            color: black;
-            font-weight: bold;
-        }
-
-        .pagination button.next:hover {
-            background-color: #ff7733;
-        }
-
-        .pagination button.selected {
-            background-color: #ff6600;
-            color: black;
-            font-weight: bold;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .video-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .sidebar {
-                display: none;
-            }
-            
-            .header {
-                flex-wrap: nowrap;
-                position: relative;
-                padding: 15px;
-                justify-content: space-between;
-            }
-            
-            .header-left {
-                position: static;
-                width: auto;
-                flex-shrink: 0;
-            }
-            
-            .search-bar {
-                order: 0;
-                width: auto;
-                flex: 1;
-                margin: 0 0 0 20px;
-                max-width: none;
-            }
-            
-            .nav-links {
-                justify-content: flex-start;
-                gap: 40px;
-                overflow-x: auto;
-                padding: 0 20px;
-            }
-            
-            .nav-links li a {
-                flex-shrink: 0;
-                padding: 15px 10px;
-            }
-        }
-    
-        /* Search Results Dropdown Styles */
-        .search-container {
-            position: relative;
-        }
-        
-        .search-bar {
-            position: relative;
-        }
-        
-        .search-results {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background-color: #1a1a1a;
-            border: 1px solid #333;
-            border-top: none;
-            border-radius: 0 0 10px 10px;
-            max-height: 400px;
-            overflow-y: auto;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .result-item {
-            background: transparent;
-            padding: 12px 15px;
-            border-bottom: 1px solid #333;
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-
-        .result-item:last-child {
-            border-bottom: none;
-        }
-
-        .result-item:hover {
-            background: #333;
-        }
-
-        .result-title {
-            font-weight: 600;
-            color: white;
-            margin-bottom: 5px;
-            font-size: 16px;
-        }
-
-        .no-results {
-            text-align: center;
-            color: #888;
-            padding: 20px;
-            font-style: italic;
+        /* Icons */
+        .icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-left">
-            
-            <div class="logo">
-                <img src="https://i.ibb.co/NnZvPn0n/Bad-LAtina.png" alt="Bad-LAtina" style="height: 40px; width: auto;">
-            </div>
-            
+<div class="page-wrapper">
+<div class="container" id="mainContainer">
+<!-- Header -->
+<header class="header">
+<div class="logo">
+<img alt="BadLatina Logo" src="https://i.ibb.co/NnZvPn0n/Bad-LAtina.png"/>
+</div>
+</header>
+<!-- Small Section Above Video -->
+<div class="above-video-section">
+<div class="section-content">
+<span class="creator-name clickable-model" data-url="https://example.com/lana-rhoads">Lana Rhoads</span>
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-rosette-discount-check" fill="currentColor" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"></path></svg>
+</div>
+</div>
+<!-- Clip Section (Clickable) -->
+<div class="clip-section" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock">
+<!-- Video Player -->
+<div class="video-container">
+<div class="video-screen">
+<iframe allow="fullscreen;autoplay" allowfullscreen="" height="180" src="https://streamable.com/e/zxsqix?&amp;autoplay=1&amp;nocontrols=1" style="border:none;" width="320"></iframe>
+</div>
+<div class="video-overlay" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock"></div>
+</div>
+<!-- Video Details -->
+<div class="video-details-row">
+<!-- Video Info -->
+<div class="video-info">
+<div class="video-title">ANGELA WHITE - Passionate Hookup with Derek Savage</div>
+<div class="video-tags">Stepsis, big ass, latina, big tits, anal</div>
+<!-- Like and Views Info -->
+<div class="engagement-stats">
+<div class="stat-item" id="likeButton" style="cursor: default;">
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-heart" fill="currentColor" height="24" id="heartIcon" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z"></path></svg>
+<span class="count">53K</span>
+</div>
+<div class="stat-item">
+<svg class="icon icon-tabler icons-tabler-outline icon-tabler-eye" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path></svg>
+<span class="count">387K</span>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="sidebar-navigation">
+<div class="nav-button-group">
+<button class="nav-arrow-button prev-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 11l-6 -6"></path><path d="M6 11l6 -6"></path></svg>
+</button>
+<span class="nav-label">Previous</span>
+</div>
+<div class="nav-button-group">
+<button class="nav-arrow-button next-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 13l-6 6"></path><path d="M6 13l6 6"></path></svg>
+</button>
+<span class="nav-label">Next</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Second Clip Section (Clickable) -->
+<div class="clip-section" data-url="https://example.com/video-clip-2">
+<!-- Small Section Above Video -->
+<div class="above-video-section">
+<div class="section-content">
+<span class="creator-name clickable-model" data-url="https://example.com/mia-khalifa">Angela White</span>
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-rosette-discount-check" fill="currentColor" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"></path></svg>
+</div>
+</div>
+<!-- Video Player -->
+<div class="video-container">
+<div class="video-screen">
+<iframe allow="fullscreen;autoplay" allowfullscreen="" height="180" src="https://streamable.com/e/zxsqix?&amp;autoplay=1&amp;nocontrols=1" style="border:none;" width="320"></iframe>
+</div>
+<div class="video-overlay" data-url="https://example.com/video-clip-2"></div>
+</div>
+<!-- Video Details -->
+<div class="video-details-row">
+<!-- Video Info -->
+<div class="video-info">
+<div class="video-title">ANGELA WHITE - Passionate Hookup with Derek Savage</div>
+<div class="video-tags">Teacher, school, big tits, latina, hardcore</div>
+<!-- Like and Views Info -->
+<div class="engagement-stats">
+<div class="stat-item" id="likeButton2" style="cursor: default;">
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-heart" fill="currentColor" height="24" id="heartIcon2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z"></path></svg>
+<span class="count">42K</span>
+</div>
+<div class="stat-item">
+<svg class="icon icon-tabler icons-tabler-outline icon-tabler-eye" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path></svg>
+<span class="count">298K</span>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="sidebar-navigation">
+<div class="nav-button-group">
+<button class="nav-arrow-button prev-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 11l-6 -6"></path><path d="M6 11l6 -6"></path></svg>
+</button>
+<span class="nav-label">Previous</span>
+</div>
+<div class="nav-button-group">
+<button class="nav-arrow-button next-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 13l-6 6"></path><path d="M6 13l6 6"></path></svg>
+</button>
+<span class="nav-label">Next</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Third Clip Section (Clickable) -->
+<div class="clip-section" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock">
+<!-- Small Section Above Video -->
+<div class="above-video-section">
+<div class="section-content">
+<span class="creator-name clickable-model" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock">Angela White</span>
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-rosette-discount-check" fill="currentColor" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"></path></svg>
+</div>
+</div>
+<!-- Video Player -->
+<div class="video-container">
+<div class="video-screen">
+<iframe allow="fullscreen;autoplay" allowfullscreen="" height="180" src="https://streamable.com/e/zxsqix?&amp;autoplay=1&amp;nocontrols=1" style="border:none;" width="320"></iframe>
+</div>
+<div class="video-overlay" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock"></div>
+</div>
+<!-- Video Details -->
+<div class="video-details-row">
+<!-- Video Info -->
+<div class="video-info">
+<div class="video-title">ANGELA WHITE - Passionate Hookup with Derek Savage</div>
+<div class="video-tags">College, young, creampie, latina, amateur</div>
+<!-- Like and Views Info -->
+<div class="engagement-stats">
+<div class="stat-item" id="likeButton3" style="cursor: default;">
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-heart" fill="currentColor" height="24" id="heartIcon3" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z"></path></svg>
+<span class="count">67K</span>
+</div>
+<div class="stat-item">
+<svg class="icon icon-tabler icons-tabler-outline icon-tabler-eye" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path></svg>
+<span class="count">445K</span>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="sidebar-navigation">
+<div class="nav-button-group">
+<button class="nav-arrow-button prev-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 11l-6 -6"></path><path d="M6 11l6 -6"></path></svg>
+</button>
+<span class="nav-label">Previous</span>
+</div>
+<div class="nav-button-group">
+<button class="nav-arrow-button next-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 13l-6 6"></path><path d="M6 13l6 6"></path></svg>
+</button>
+<span class="nav-label">Next</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Fourth Clip Section (Clickable) -->
+<div class="clip-section ad-section" data-url="https://onlyfans.com/">
+<!-- Small Section Above Video -->
+<div class="above-video-section">
+<div class="section-content">
+<span class="creator-name">Violet Myers</span>
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-rosette-discount-check" fill="currentColor" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"></path></svg>
+</div>
+</div>
+<!-- Video Player -->
+<div class="video-container video-container-square">
+<div class="video-screen" style="display: block !important; aspect-ratio: 1 / 1; width: 100%; height: 100%; position: relative; background-color: #000;"><img src="https://s14.gifyu.com/images/bwFo8.gif" style="width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 1 / 1; background-color: #000;"/></div>
+<div class="video-overlay" data-url="https://onlyfans.com/"></div>
+</div>
+<!-- Video Details -->
+<div class="video-details-row">
+<!-- Video Info -->
+<div class="video-info">
+<div class="video-title">Looking for a content partner nearby to make sextapes for OF</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="sidebar-navigation">
+<div class="nav-button-group">
+<button class="nav-arrow-button prev-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 11l-6 -6"></path><path d="M6 11l6 -6"></path></svg>
+</button>
+<span class="nav-label">Previous</span>
+</div>
+<div class="nav-button-group">
+<button class="nav-arrow-button next-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 13l-6 6"></path><path d="M6 13l6 6"></path></svg>
+</button>
+<span class="nav-label">Next</span>
+</div>
+</div>
+</div>
+<!-- Send Message Section -->
+<div class="send-message-section" data-url="https://onlyfans.com/">
+<span class="send-message-text">Send Message</span>
+</div>
+</div>
+<!-- Fifth Clip Section (Clickable) -->
+<div class="clip-section" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock">
+<!-- Small Section Above Video -->
+<div class="above-video-section">
+<div class="section-content">
+<span class="creator-name clickable-model" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock">Angela White</span>
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-rosette-discount-check" fill="currentColor" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"></path></svg>
+</div>
+</div>
+<!-- Video Player -->
+<div class="video-container">
+<div class="video-screen">
+<iframe allow="fullscreen;autoplay" allowfullscreen="" height="180" src="https://streamable.com/e/zxsqix?&amp;autoplay=1&amp;nocontrols=1" style="border:none;" width="320"></iframe>
+</div>
+<div class="video-overlay" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock"></div>
+</div>
+<!-- Video Details -->
+<div class="video-details-row">
+<!-- Video Info -->
+<div class="video-info">
+<div class="video-title">ANGELA WHITE - Passionate Hookup with Derek Savage</div>
+<div class="video-tags">Stepsis, young, latina, big ass, rough</div>
+<!-- Like and Views Info -->
+<div class="engagement-stats">
+<div class="stat-item" id="likeButton5" style="cursor: default;">
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-heart" fill="currentColor" height="24" id="heartIcon5" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z"></path></svg>
+<span class="count">89K</span>
+</div>
+<div class="stat-item">
+<svg class="icon icon-tabler icons-tabler-outline icon-tabler-eye" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path></svg>
+<span class="count">612K</span>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="sidebar-navigation">
+<div class="nav-button-group">
+<button class="nav-arrow-button prev-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 11l-6 -6"></path><path d="M6 11l6 -6"></path></svg>
+</button>
+<span class="nav-label">Previous</span>
+</div>
+<div class="nav-button-group">
+<button class="nav-arrow-button next-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 13l-6 6"></path><path d="M6 13l6 6"></path></svg>
+</button>
+<span class="nav-label">Next</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Ad Section -->
+<div class="ad-container">
+</div>
+<!-- Sixth Clip Section (Clickable) -->
+<div class="clip-section" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock">
+<!-- Small Section Above Video -->
+<div class="above-video-section">
+<div class="section-content">
+<span class="creator-name clickable-model" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock">Angela White</span>
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-rosette-discount-check" fill="currentColor" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"></path></svg>
+</div>
+</div>
+<!-- Video Player -->
+<div class="video-container">
+<div class="video-screen">
+<iframe allow="fullscreen;autoplay" allowfullscreen="" height="180" src="https://streamable.com/e/zxsqix?&amp;autoplay=1&amp;nocontrols=1" style="border:none;" width="320"></iframe>
+</div>
+<div class="video-overlay" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock"></div>
+</div>
+<!-- Video Details -->
+<div class="video-details-row">
+<!-- Video Info -->
+<div class="video-info">
+<div class="video-title">ANGELA WHITE - Passionate Hookup with Derek Savage</div>
+<div class="video-tags">MILF, big tits, latina, hardcore, rough</div>
+<!-- Like and Views Info -->
+<div class="engagement-stats">
+<div class="stat-item" id="likeButton6" style="cursor: default;">
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-heart" fill="currentColor" height="24" id="heartIcon6" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z"></path></svg>
+<span class="count">34K</span>
+</div>
+<div class="stat-item">
+<svg class="icon icon-tabler icons-tabler-outline icon-tabler-eye" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path></svg>
+<span class="count">156K</span>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="sidebar-navigation">
+<div class="nav-button-group">
+<button class="nav-arrow-button prev-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 11l-6 -6"></path><path d="M6 11l6 -6"></path></svg>
+</button>
+<span class="nav-label">Previous</span>
+</div>
+<div class="nav-button-group">
+<button class="nav-arrow-button next-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 13l-6 6"></path><path d="M6 13l6 6"></path></svg>
+</button>
+<span class="nav-label">Next</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Seventh Clip Section (Clickable) -->
+<div class="clip-section" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock">
+<!-- Small Section Above Video -->
+<div class="above-video-section">
+<div class="section-content">
+<span class="creator-name clickable-model" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock">Angela White</span>
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-rosette-discount-check" fill="currentColor" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"></path></svg>
+</div>
+</div>
+<!-- Video Player -->
+<div class="video-container">
+<div class="video-screen">
+<iframe allow="fullscreen;autoplay" allowfullscreen="" height="180" src="https://streamable.com/e/zxsqix?&amp;autoplay=1&amp;nocontrols=1" style="border:none;" width="320"></iframe>
+</div>
+<div class="video-overlay" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock"></div>
+</div>
+<!-- Video Details -->
+<div class="video-details-row">
+<!-- Video Info -->
+<div class="video-info">
+<div class="video-title">ANGELA WHITE - Passionate Hookup with Derek Savage</div>
+<div class="video-tags">Anal, latina, rough, hardcore, big ass</div>
+<!-- Like and Views Info -->
+<div class="engagement-stats">
+<div class="stat-item" id="likeButton7" style="cursor: default;">
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-heart" fill="currentColor" height="24" id="heartIcon7" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z"></path></svg>
+<span class="count">76K</span>
+</div>
+<div class="stat-item">
+<svg class="icon icon-tabler icons-tabler-outline icon-tabler-eye" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path></svg>
+<span class="count">523K</span>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="sidebar-navigation">
+<div class="nav-button-group">
+<button class="nav-arrow-button prev-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 11l-6 -6"></path><path d="M6 11l6 -6"></path></svg>
+</button>
+<span class="nav-label">Previous</span>
+</div>
+<div class="nav-button-group">
+<button class="nav-arrow-button next-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 13l-6 6"></path><path d="M6 13l6 6"></path></svg>
+</button>
+<span class="nav-label">Next</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Eighth Clip Section (Clickable) -->
+<div class="clip-section" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock">
+<!-- Small Section Above Video -->
+<div class="above-video-section">
+<div class="section-content">
+<span class="creator-name clickable-model" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock">Angela White</span>
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-rosette-discount-check" fill="currentColor" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"></path></svg>
+</div>
+</div>
+<!-- Video Player -->
+<div class="video-container">
+<div class="video-screen">
+<iframe allow="fullscreen;autoplay" allowfullscreen="" height="180" src="https://streamable.com/e/zxsqix?&amp;autoplay=1&amp;nocontrols=1" style="border:none;" width="320"></iframe>
+</div>
+<div class="video-overlay" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock"></div>
+</div>
+<!-- Video Details -->
+<div class="video-details-row">
+<!-- Video Info -->
+<div class="video-info">
+<div class="video-title">ANGELA WHITE - Passionate Hookup with Derek Savage</div>
+<div class="video-tags">Threesome, anal, latina, group, fun</div>
+<!-- Like and Views Info -->
+<div class="engagement-stats">
+<div class="stat-item" id="likeButton8" style="cursor: default;">
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-heart" fill="currentColor" height="24" id="heartIcon8" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z"></path></svg>
+<span class="count">91K</span>
+</div>
+<div class="stat-item">
+<svg class="icon icon-tabler icons-tabler-outline icon-tabler-eye" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path></svg>
+<span class="count">734K</span>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="sidebar-navigation">
+<div class="nav-button-group">
+<button class="nav-arrow-button prev-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 11l-6 -6"></path><path d="M6 11l6 -6"></path></svg>
+</button>
+<span class="nav-label">Previous</span>
+</div>
+<div class="nav-button-group">
+<button class="nav-arrow-button next-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 13l-6 6"></path><path d="M6 13l6 6"></path></svg>
+</button>
+<span class="nav-label">Next</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Ad Section -->
+<div class="clip-section ad-section" data-url="https://onlyfans.com/">
+<!-- Small Section Above Video -->
+<div class="above-video-section">
+<div class="section-content">
+<span class="creator-name">Violet Myers</span>
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-rosette-discount-check" fill="currentColor" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"></path></svg>
+</div>
+</div>
+<!-- Video Player -->
+<div class="video-container video-container-square">
+<div class="video-screen" style="display: block !important; aspect-ratio: 1 / 1; width: 100%; height: 100%; position: relative; background-color: #000;"><img src="https://s14.gifyu.com/images/bwFo8.gif" style="width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 1 / 1; background-color: #000;"/></div>
+<div class="video-overlay" data-url="https://onlyfans.com/"></div>
+</div>
+<!-- Video Details -->
+<div class="video-details-row">
+<!-- Video Info -->
+<div class="video-info">
+<div class="video-title">Looking for a content partner nearby to make sextapes for OF</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="sidebar-navigation">
+<div class="nav-button-group">
+<button class="nav-arrow-button prev-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 11l-6 -6"></path><path d="M6 11l6 -6"></path></svg>
+</button>
+<span class="nav-label">Previous</span>
+</div>
+<div class="nav-button-group">
+<button class="nav-arrow-button next-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 13l-6 6"></path><path d="M6 13l6 6"></path></svg>
+</button>
+<span class="nav-label">Next</span>
+</div>
+</div>
+</div>
+<!-- Send Message Section -->
+<div class="send-message-section" data-url="https://onlyfans.com/">
+<span class="send-message-text">Send Message</span>
+</div>
+</div>
+<!-- Ninth Clip Section (Clickable) -->
+<div class="clip-section" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock">
+<!-- Small Section Above Video -->
+<div class="above-video-section">
+<div class="section-content">
+<span class="creator-name clickable-model" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock">Angela White</span>
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-rosette-discount-check" fill="currentColor" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"></path></svg>
+</div>
+</div>
+<!-- Video Player -->
+<div class="video-container">
+<div class="video-screen">
+<iframe allow="fullscreen;autoplay" allowfullscreen="" height="180" src="https://streamable.com/e/zxsqix?&amp;autoplay=1&amp;nocontrols=1" style="border:none;" width="320"></iframe>
+</div>
+<div class="video-overlay" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock"></div>
+</div>
+<!-- Video Details -->
+<div class="video-details-row">
+<!-- Video Info -->
+<div class="video-info">
+<div class="video-title">ANGELA WHITE - Passionate Hookup with Derek Savage</div>
+<div class="video-tags">Big ass, latina, rough, hardcore, anal</div>
+<!-- Like and Views Info -->
+<div class="engagement-stats">
+<div class="stat-item" id="likeButton9" style="cursor: default;">
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-heart" fill="currentColor" height="24" id="heartIcon9" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z"></path></svg>
+<span class="count">128K</span>
+</div>
+<div class="stat-item">
+<svg class="icon icon-tabler icons-tabler-outline icon-tabler-eye" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path></svg>
+<span class="count">892K</span>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="sidebar-navigation">
+<div class="nav-button-group">
+<button class="nav-arrow-button prev-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 11l-6 -6"></path><path d="M6 11l6 -6"></path></svg>
+</button>
+<span class="nav-label">Previous</span>
+</div>
+<div class="nav-button-group">
+<button class="nav-arrow-button next-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 13l-6 6"></path><path d="M6 13l6 6"></path></svg>
+</button>
+<span class="nav-label">Next</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tenth Clip Section (Clickable) -->
+<div class="clip-section" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock">
+<!-- Small Section Above Video -->
+<div class="above-video-section">
+<div class="section-content">
+<span class="creator-name clickable-model" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock">Angela White</span>
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-rosette-discount-check" fill="currentColor" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"></path></svg>
+</div>
+</div>
+<!-- Video Player -->
+<div class="video-container">
+<div class="video-screen">
+<iframe allow="fullscreen;autoplay" allowfullscreen="" height="180" src="https://streamable.com/e/zxsqix?&amp;autoplay=1&amp;nocontrols=1" style="border:none;" width="320"></iframe>
+</div>
+<div class="video-overlay" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock"></div>
+</div>
+<!-- Video Details -->
+<div class="video-details-row">
+<!-- Video Info -->
+<div class="video-info">
+<div class="video-title">ANGELA WHITE - Passionate Hookup with Derek Savage</div>
+<div class="video-tags">Public, latina, wild, outdoor, big tits</div>
+<!-- Like and Views Info -->
+<div class="engagement-stats">
+<div class="stat-item" id="likeButton10" style="cursor: default;">
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-heart" fill="currentColor" height="24" id="heartIcon10" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z"></path></svg>
+<span class="count">56K</span>
+</div>
+<div class="stat-item">
+<svg class="icon icon-tabler icons-tabler-outline icon-tabler-eye" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path></svg>
+<span class="count">234K</span>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="sidebar-navigation">
+<div class="nav-button-group">
+<button class="nav-arrow-button prev-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 11l-6 -6"></path><path d="M6 11l6 -6"></path></svg>
+</button>
+<span class="nav-label">Previous</span>
+</div>
+<div class="nav-button-group">
+<button class="nav-arrow-button next-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 13l-6 6"></path><path d="M6 13l6 6"></path></svg>
+</button>
+<span class="nav-label">Next</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Eleventh Clip Section (Clickable) -->
+<div class="clip-section" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock">
+<!-- Small Section Above Video -->
+<div class="above-video-section">
+<div class="section-content">
+<span class="creator-name clickable-model" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock">Angela White</span>
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-rosette-discount-check" fill="currentColor" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"></path></svg>
+</div>
+</div>
+<!-- Video Player -->
+<div class="video-container">
+<div class="video-screen">
+<iframe allow="fullscreen;autoplay" allowfullscreen="" height="180" src="https://streamable.com/e/zxsqix?&amp;autoplay=1&amp;nocontrols=1" style="border:none;" width="320"></iframe>
+</div>
+<div class="video-overlay" data-url="https://badlatina.com/angela_white_violet_myers_get_fucked_hollywood_cash_huge_cock"></div>
+</div>
+<!-- Video Details -->
+<div class="video-details-row">
+<!-- Video Info -->
+<div class="video-info">
+<div class="video-title">ANGELA WHITE - Passionate Hookup with Derek Savage</div>
+<div class="video-tags">Big tits, latina, rough, hardcore, creampie</div>
+<!-- Like and Views Info -->
+<div class="engagement-stats">
+<div class="stat-item" id="likeButton11" style="cursor: default;">
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-heart" fill="currentColor" height="24" id="heartIcon11" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z"></path></svg>
+<span class="count">78K</span>
+</div>
+<div class="stat-item">
+<svg class="icon icon-tabler icons-tabler-outline icon-tabler-eye" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path></svg>
+<span class="count">398K</span>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="sidebar-navigation">
+<div class="nav-button-group">
+<button class="nav-arrow-button prev-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 11l-6 -6"></path><path d="M6 11l6 -6"></path></svg>
+</button>
+<span class="nav-label">Previous</span>
+</div>
+<div class="nav-button-group">
+<button class="nav-arrow-button next-button">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M12 5l0 14"></path><path d="M18 13l-6 6"></path><path d="M6 13l6 6"></path></svg>
+</button>
+<span class="nav-label">Next</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More Button -->
+<div class="load-more-button" data-url="http://badlatina.com/home">
+            Load more
         </div>
-        
-        <div class="search-bar">
-            <div class="search-container">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"/>
-                    <path d="M21 21l-6 -6"/>
-                </svg>
-                <input type="text" class="search-input" id="searchInput" placeholder="Search" autocomplete="off">
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+<div class="nav-item active" data-url="http://badlatina.com/home">
+<svg class="icon icon-tabler icons-tabler-outline icon-tabler-home" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M5 12l-2 0l9 -9l9 9l-2 0"></path><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path></svg>
+<div class="nav-label">Home</div>
+</div>
+<div class="nav-item" data-url="http://badlatina.com/models">
+<svg class="icon icon-tabler icons-tabler-outline icon-tabler-users-group" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path><path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1"></path><path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path><path d="M17 10h2a2 2 0 0 1 2 2v1"></path><path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path><path d="M3 13v-1a2 2 0 0 1 2 -2h2"></path></svg>
+<div class="nav-label">Models</div>
+</div>
+<div class="nav-item" data-url="http://badlatina.com/nearby">
+<svg class="icon icon-tabler icons-tabler-filled icon-tabler-map-pin" fill="currentColor" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M18.364 4.636a9 9 0 0 1 .203 12.519l-.203 .21l-4.243 4.242a3 3 0 0 1 -4.097 .135l-.144 -.135l-4.244 -4.243a9 9 0 0 1 12.728 -12.728zm-6.364 3.364a3 3 0 1 0 0 6a3 3 0 0 0 0 -6z"></path></svg>
+<div class="nav-label">Nearby</div>
+</div>
+<div class="nav-item" data-url="http://badlatina.com/categories">
+<svg class="icon icon-tabler icons-tabler-outline icon-tabler-category" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M4 4h6v6h-6z"></path><path d="M14 4h6v6h-6z"></path><path d="M4 14h6v6h-6z"></path><path d="M17 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path></svg>
+<div class="nav-label">Category</div>
+</div>
+<div class="nav-item" data-url="http://badlatina.com/search">
+<svg class="icon icon-tabler icons-tabler-outline icon-tabler-search" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none" stroke="none"></path><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path><path d="M21 21l-6 -6"></path></svg>
+<div class="nav-label">Search</div>
+</div>
+</nav>
+</div>
+</div>
+<script>
+        // Navigation button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const prevButton = document.querySelector('.prev-button');
+            const nextButton = document.querySelector('.next-button');
             
-                <!-- Search Results Dropdown -->
-                <div class="search-results" id="searchResults" style="display: none;">
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Navigation -->
-    <nav class="navigation">
-        <ul class="nav-links">
+            // Get current page number from URL or default to 1
+            const currentPage = window.location.pathname.match(/page(\d+)\.html/) ? 
+                parseInt(window.location.pathname.match(/page(\d+)\.html/)[1]) : 1;
             
-            <li><a href="#" class="active">HOME</a></li>
+            // Previous button click
+            prevButton.addEventListener('click', function() {
+                if (currentPage > 1) {
+                    const prevPage = currentPage - 1;
+                    window.location.href = prevPage === 1 ? 'index.html' : `page${prevPage}.html`;
+                }
+            });
             
-            <li><a href="#" >CATEGORIES</a></li>
+            // Next button click
+            nextButton.addEventListener('click', function() {
+                const nextPage = currentPage + 1;
+                window.location.href = `page${nextPage}.html`;
+            });
             
-            <li><a href="#" >PORNSTARS</a></li>
-            
-            <li><a href="#" >MILF</a></li>
-            
-            <li><a href="#" >ASIAN</a></li>
-            
-            <li><a href="#" >AMATEUR</a></li>
-            
-            <li><a href="#" >ANAL</a></li>
-            
-            <li><a href="#" >PHOTOS & GIFS</a></li>
-            
-        </ul>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="content-area">
-            <div class="video-grid">
-                
-                
-                <div class="video-item" >
-                    <div class="video-thumbnail" >Clip thumbnail</div>
-                    <div class="model-name">
-                        Sofia Rose
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"/>
-                        </svg>
-                    </div>
-                    <div class="video-title">New Clip 5 - Click to edit title</div>
-                    <div class="video-meta">00:00 - 0 views - 0%</div>
-                </div>
-                
-                
-                
-                <div class="video-item" >
-                    <div class="video-thumbnail" >Clip thumbnail</div>
-                    <div class="model-name">
-                        Sofia Rose
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"/>
-                        </svg>
-                    </div>
-                    <div class="video-title">New Clip 5 - Click to edit title</div>
-                    <div class="video-meta">00:00 - 0 views - 0%</div>
-                </div>
-                
-                
-                
-                <div class="video-item" >
-                    <div class="video-thumbnail" >Clip thumbnail</div>
-                    <div class="model-name">
-                        Sofia Rose
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"/>
-                        </svg>
-                    </div>
-                    <div class="video-title">New Clip 5 - Click to edit title</div>
-                    <div class="video-meta">00:00 - 0 views - 0%</div>
-                </div>
-                
-                
-                
-                <div class="video-item" >
-                    <div class="video-thumbnail" >Clip thumbnail</div>
-                    <div class="model-name">
-                        Sofia Rose
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"/>
-                        </svg>
-                    </div>
-                    <div class="video-title">New Clip 5 - Click to edit title</div>
-                    <div class="video-meta">00:00 - 0 views - 0%</div>
-                </div>
-                
-                
-                
-                <div class="video-item" >
-                    <div class="video-thumbnail" >Clip thumbnail</div>
-                    <div class="model-name">
-                        Sofia Rose
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"/>
-                        </svg>
-                    </div>
-                    <div class="video-title">New Clip 5 - Click to edit title</div>
-                    <div class="video-meta">00:00 - 0 views - 0%</div>
-                </div>
-                
-                
-                
-                <div class="video-item" >
-                    <div class="video-thumbnail" >Clip thumbnail</div>
-                    <div class="model-name">
-                        Sofia Rose
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"/>
-                        </svg>
-                    </div>
-                    <div class="video-title">New Clip 5 - Click to edit title</div>
-                    <div class="video-meta">00:00 - 0 views - 0%</div>
-                </div>
-                
-                
-                
-                <div class="video-item" >
-                    <div class="video-thumbnail" >Clip thumbnail</div>
-                    <div class="model-name">
-                        Sofia Rose
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"/>
-                        </svg>
-                    </div>
-                    <div class="video-title">New Clip 5 - Click to edit title</div>
-                    <div class="video-meta">00:00 - 0 views - 0%</div>
-                </div>
-                
-                
-                
-                <div class="video-item" >
-                    <div class="video-thumbnail" >Clip thumbnail</div>
-                    <div class="model-name">
-                        Sofia Rose
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"/>
-                        </svg>
-                    </div>
-                    <div class="video-title">New Clip 5 - Click to edit title</div>
-                    <div class="video-meta">00:00 - 0 views - 0%</div>
-                </div>
-                
-                
-                
-                <div class="video-item" >
-                    <div class="video-thumbnail" >Clip thumbnail</div>
-                    <div class="model-name">
-                        Sofia Rose
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"/>
-                        </svg>
-                    </div>
-                    <div class="video-title">New Clip 5 - Click to edit title</div>
-                    <div class="video-meta">00:00 - 0 views - 0%</div>
-                </div>
-                
-                
-                
-                <div class="video-item" >
-                    <div class="video-thumbnail" >Clip thumbnail</div>
-                    <div class="model-name">
-                        Sofia Rose
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"/>
-                        </svg>
-                    </div>
-                    <div class="video-title">New Clip 5 - Click to edit title</div>
-                    <div class="video-meta">00:00 - 0 views - 0%</div>
-                </div>
-                
-                
-                
-                <div class="video-item" >
-                    <div class="video-thumbnail" >Clip thumbnail</div>
-                    <div class="model-name">
-                        Sofia Rose
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"/>
-                        </svg>
-                    </div>
-                    <div class="video-title">New Clip 5 - Click to edit title</div>
-                    <div class="video-meta">00:00 - 0 views - 0%</div>
-                </div>
-                
-                
-                
-                <div class="video-item" >
-                    <div class="video-thumbnail" >Clip thumbnail</div>
-                    <div class="model-name">
-                        Sofia Rose
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"/>
-                        </svg>
-                    </div>
-                    <div class="video-title">New Clip 5 - Click to edit title</div>
-                    <div class="video-meta">00:00 - 0 views - 0%</div>
-                </div>
-                
-                
-                
-                <div class="video-item" >
-                    <div class="video-thumbnail" >Clip thumbnail</div>
-                    <div class="model-name">
-                        Sofia Rose
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"/>
-                        </svg>
-                    </div>
-                    <div class="video-title">New Clip 5 - Click to edit title</div>
-                    <div class="video-meta">00:00 - 0 views - 0%</div>
-                </div>
-                
-                
-                
-                <div class="video-item" >
-                    <div class="video-thumbnail" >Clip thumbnail</div>
-                    <div class="model-name">
-                        Sofia Rose
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"/>
-                        </svg>
-                    </div>
-                    <div class="video-title">New Clip 5 - Click to edit title</div>
-                    <div class="video-meta">00:00 - 0 views - 0%</div>
-                </div>
-                
-                
-                
-                <div class="video-item" >
-                    <div class="video-thumbnail" >Clip thumbnail</div>
-                    <div class="model-name">
-                        Sofia Rose
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"/>
-                        </svg>
-                    </div>
-                    <div class="video-title">New Clip 5 - Click to edit title</div>
-                    <div class="video-meta">00:00 - 0 views - 0%</div>
-                </div>
-                
-                
-                
-                <div class="video-item" >
-                    <div class="video-thumbnail" >Clip thumbnail</div>
-                    <div class="model-name">
-                        Sofia Rose
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"/>
-                        </svg>
-                    </div>
-                    <div class="video-title">New Clip 5 - Click to edit title</div>
-                    <div class="video-meta">00:00 - 0 views - 0%</div>
-                </div>
-                
-                
-                
-                <div class="video-item" >
-                    <div class="video-thumbnail" >Clip thumbnail</div>
-                    <div class="model-name">
-                        Sofia Rose
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"/>
-                        </svg>
-                    </div>
-                    <div class="video-title">New Clip 5 - Click to edit title</div>
-                    <div class="video-meta">00:00 - 0 views - 0%</div>
-                </div>
-                
-                
-                
-                <div class="video-item" >
-                    <div class="video-thumbnail" >Clip thumbnail</div>
-                    <div class="model-name">
-                        Sofia Rose
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="verified-icon">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12.01 2.011a3.2 3.2 0 0 1 2.113 .797l.154 .145l.698 .698a1.2 1.2 0 0 0 .71 .341l.135 .008h1a3.2 3.2 0 0 1 3.195 3.018l.005 .182v1c0 .27 .092 .533 .258 .743l.09 .1l.697 .698a3.2 3.2 0 0 1 .147 4.382l-.145 .154l-.698 .698a1.2 1.2 0 0 0 -.341 .71l-.008 .135v1a3.2 3.2 0 0 1 -3.018 3.195l-.182 .005h-1a1.2 1.2 0 0 0 -.743 .258l-.1 .09l-.698 .697a3.2 3.2 0 0 1 -4.382 .147l-.154 -.145l-.698 -.698a1.2 1.2 0 0 0 -.71 -.341l-.135 -.008h-1a3.2 3.2 0 0 1 -3.195 -3.018l-.005 -.182v-1a1.2 1.2 0 0 0 -.258 -.743l-.09 -.1l-.697 -.698a3.2 3.2 0 0 1 -.147 -4.382l.145 -.154l.698 -.698a1.2 1.2 0 0 0 .341 -.71l.008 -.135v-1l.005 -.182a3.2 3.2 0 0 1 3.013 -3.013l.182 -.005h1a1.2 1.2 0 0 0 .743 -.258l.1 -.09l.698 -.697a3.2 3.2 0 0 1 2.269 -.944zm3.697 7.282a1 1 0 0 0 -1.414 0l-3.293 3.292l-1.293 -1.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l2 2l.094 .083a1 1 0 0 0 1.32 -.083l4 -4l.083 -.094a1 1 0 0 0 -.083 -1.32z"/>
-                        </svg>
-                    </div>
-                    <div class="video-title">New Clip 5 - Click to edit title</div>
-                    <div class="video-meta">00:00 - 0 views - 0%</div>
-                </div>
-                
-                
-            </div>
-        </div>
-
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            
-            
-            <div class="ad-block"  >
-            </div>
-            
-            
-            
-            <div class="ad-block"  >
-            </div>
-            
-            
-        </aside>
-    </main>
-
-    <!-- Pagination -->
-    <div class="pagination">
-        <button>Prev</button>
-        <button class="selected">1</button><button>2</button><button>3</button><button>4</button><button>5</button>
-        <button class="next">Next</button>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-description">
-            BadLatina provides you with unlimited free porn videos with the hottest pornstars. Enjoy the largest amateur porn community on the net as well as full-length scenes from the top XXX studios. We update our porn videos daily to ensure you always get the best quality sex movies.
-        </div>
-        <div class="copyright">© BadLatina, 2025</div>
-    </footer>
-    <script>let sampleData = {
-    all: [
-        {title: "lana rhoads", description: "", url: "https://www.youtube.com/watch?v=uMj8q7fOnA8"},
-        {title: "cumshot", description: "", url: "https://www.youtube.com/watch?v=RbOwSnP48s8"},
-    ],
-    web: [
-    ],
-    images: [
-    ],
-    videos: [
-    ],
-    news: [
-    ],
-};
-
-
-function performSearch() {
-    const query = document.getElementById('searchInput').value.trim().toLowerCase();
-    const resultsContainer = document.getElementById('searchResults');
-    
-    // Don't show results for very short queries
-    if (!query || query.length < 2) {
-        resultsContainer.style.display = 'none';
-        return;
-    }
-    
-    // Show search results dropdown
-    resultsContainer.style.display = 'block';
-    
-    // Search across all categories and remove duplicates
-    const allItems = [];
-    Object.values(sampleData).forEach(category => {
-        allItems.push(...category);
-    });
-    
-    // Remove duplicates based on title
-    const uniqueItems = [];
-    const seenTitles = new Set();
-    allItems.forEach(item => {
-        if (!seenTitles.has(item.title)) {
-            seenTitles.add(item.title);
-            uniqueItems.push(item);
-        }
-    });
-    
-    // Improved search logic with better matching and scoring
-    const results = uniqueItems.map(item => {
-        const title = item.title.toLowerCase();
-        const description = item.description.toLowerCase();
-        let score = 0;
-        let matched = false;
-        
-        // Check if title starts with the query (highest priority - score 100)
-        if (title.startsWith(query)) {
-            score = 100;
-            matched = true;
-        }
-        // Check if any word in title starts with the query (score 80)
-        else if (title.split(/\s+/).some(word => word.startsWith(query))) {
-            score = 80;
-            matched = true;
-        }
-        // Check if title contains the query as a whole word (score 60)
-        else if (title.includes(` ${query} `) || title.includes(` ${query}`) || title.startsWith(`${query} `)) {
-            score = 60;
-            matched = true;
-        }
-        // Check if title contains query anywhere (score 40)
-        else if (title.includes(query)) {
-            score = 40;
-            matched = true;
-        }
-        // Only check description if query is longer and no title match (score 20)
-        else if (query.length >= 3 && description.includes(query)) {
-            score = 20;
-            matched = true;
-        }
-        
-        return { ...item, score };
-    }).filter(item => item.score > 0)
-      .sort((a, b) => b.score - a.score); // Sort by score descending
-    
-    displayResults(results);
-}
-
-function displayResults(results) {
-    const resultsContainer = document.getElementById('searchResults');
-    
-    if (results.length === 0) {
-        resultsContainer.innerHTML = '<div class="no-results">No results found. Try different keywords.</div>';
-        return;
-    }
-    
-    const resultsHTML = results.map(item => `
-        <div class="result-item" onclick="openUrl('${item.url}')">
-            <div class="result-title">${item.title}</div>
-        </div>
-    `).join('');
-    
-    resultsContainer.innerHTML = resultsHTML;
-}
-
-function openUrl(url) {
-    if (url && url !== 'undefined') {
-        window.open(url, '_blank');
-    }
-}
-
-// Add event listeners
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('searchInput');
-    if (searchInput) {
-        searchInput.addEventListener('input', performSearch);
-        searchInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                performSearch();
+            // Disable previous button if on first page
+            if (currentPage === 1) {
+                prevButton.style.opacity = '0.5';
+                prevButton.style.cursor = 'not-allowed';
+                prevButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                });
             }
+
+            // Like button functionality disabled
+
+            // Video overlay clickable functionality
+            const videoOverlays = document.querySelectorAll('.video-overlay');
+            videoOverlays.forEach(overlay => {
+                overlay.addEventListener('click', function() {
+                    const url = this.getAttribute('data-url');
+                    window.open(url, '_blank');
+                });
+            });
+
+            // Clip section clickable functionality
+            const clipSections = document.querySelectorAll('.clip-section');
+            clipSections.forEach(section => {
+                section.addEventListener('click', function() {
+                    const url = this.getAttribute('data-url');
+                    window.open(url, '_blank');
+                });
+            });
+
+            // Model name clickable functionality
+            const clickableModels = document.querySelectorAll('.clickable-model');
+            clickableModels.forEach(model => {
+                model.addEventListener('click', function() {
+                    const url = this.getAttribute('data-url');
+                    if (url) {
+                        window.open(url, '_blank');
+                    }
+                });
+            });
+
+            // Send message section clickable functionality
+            const sendMessageSection = document.querySelector('.send-message-section');
+            sendMessageSection.addEventListener('click', function() {
+                const url = this.getAttribute('data-url');
+                window.open(url, '_blank');
+            });
+
+            // Load more button clickable functionality
+            const loadMoreButton = document.querySelector('.load-more-button');
+            loadMoreButton.addEventListener('click', function() {
+                const url = this.getAttribute('data-url');
+                window.open(url, '_blank');
+            });
+
+            // Footer navigation items clickable functionality
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const url = this.getAttribute('data-url');
+                    if (url) {
+                        window.open(url, '_blank');
+                    }
+                });
+            });
         });
-    }
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(e) {
-        const searchContainer = document.querySelector('.search-container');
-        const resultsContainer = document.getElementById('searchResults');
-        
-        if (searchContainer && resultsContainer && !searchContainer.contains(e.target)) {
-            resultsContainer.style.display = 'none';
-        }
-    });
-
-    // Close dropdown when pressing Escape
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            const resultsContainer = document.getElementById('searchResults');
-            if (resultsContainer) {
-                resultsContainer.style.display = 'none';
-            }
-        }
-    });
-
-    // Initialize with empty state
-    const resultsContainer = document.getElementById('searchResults');
-    if (resultsContainer) {
-        resultsContainer.innerHTML = '';
-    }
-});</script>
+        </script>
 </body>
 </html>
