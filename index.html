@@ -1,42 +1,39 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stacked Iframes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Split Iframe View</title>
+
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
+      overflow: hidden;
       background: #000;
+      font-family: sans-serif;
+    }
+
+    .split {
+      height: 50vh;
+      width: 100%;
+      position: relative;
       overflow: hidden;
     }
 
-    /* base iframe */
-    .base-frame {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-      z-index: 1;
-    }
-
-    /* top overlay container */
-    .top-frame {
-      position: fixed;
-      top: 50%;
-      left: 50%;
+    /* Top custom crop container */
+    .top-inner {
       width: 1000px;
       height: 550px;
-      transform: translate(-50%, -50%);
       overflow: hidden;
-      z-index: 2;
-      pointer-events: auto;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
 
-    .top-frame iframe {
+    .top-inner iframe {
       position: absolute;
       top: -40px;
       left: -10px;
@@ -44,22 +41,35 @@
       height: 800px;
       border: none;
     }
+
+    /* Bottom iframe */
+    .bottom iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
   </style>
 </head>
+
 <body>
 
-  <!-- bottom iframe -->
-  <iframe
-    class="base-frame"
-    src="https://link.me/ava.xo"
-    allow="fullscreen; autoplay"
-    allowfullscreen>
-  </iframe>
+  <!-- TOP HALF -->
+  <div class="split">
+    <div class="top-inner">
+      <iframe
+        src="https://cbxyz.com/in/?tour=SHBY&campaign=uaaeB&track=embed&room=aviebby"
+        allow="autoplay; fullscreen"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
 
-  <!-- top iframe overlay -->
-  <div class="top-frame">
-    <iframe 
-      src="https://cbxyz.com/in/?tour=SHBY&campaign=uaaeB&track=embed&room=aviebby">
+  <!-- BOTTOM HALF -->
+  <div class="split bottom">
+    <iframe
+      src="https://link.me/ava.xo"
+      allow="fullscreen"
+      allowfullscreen>
     </iframe>
   </div>
 
