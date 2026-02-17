@@ -3,40 +3,54 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bottom Crop Embed</title>
+  <title>Stacked Iframes</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
       background: #000;
+      overflow: hidden;
     }
 
-    .frame-wrap {
+    .bg-frame {
+      position: fixed;
+      inset: 0;
       width: 100%;
-      height: 400px;          /* visible bottom area height */
-      overflow: hidden;       /* hides top part */
-      position: relative;
-    }
-
-    .frame-wrap iframe {
-      width: 100%;
-      height: 1200px;         /* taller than container */
+      height: 100%;
       border: 0;
-      position: absolute;
-      top: -800px;            /* shift up to reveal bottom */
-      left: 0;
+      z-index: 1;
+    }
+
+    .top-frame {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 850px;
+      height: 528px;
+      border: none;
+      z-index: 2;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      background: #000;
     }
   </style>
 </head>
 <body>
 
-  <div class="frame-wrap">
-    <iframe
-      src="https://link.me/ava.xo"
-      allow="fullscreen; autoplay"
-      allowfullscreen>
-    </iframe>
-  </div>
+  <!-- Background iframe -->
+  <iframe
+    class="bg-frame"
+    src="https://link.me/ava.xo"
+    allow="fullscreen; autoplay"
+    allowfullscreen>
+  </iframe>
+
+  <!-- Top iframe -->
+  <iframe
+    class="top-frame"
+    src="https://cbxyz.com/in/?tour=SHBY&campaign=PBkd8&track=embed&room=aviebby">
+  </iframe>
 
 </body>
 </html>
