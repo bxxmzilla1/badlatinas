@@ -3,44 +3,40 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Embed + Auto Scroll</title>
-
+  <title>Bottom Crop Embed</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      height: 200vh; /* extra height so page can scroll */
       background: #000;
     }
 
-    iframe {
-      position: fixed;
-      top: 0;
-      left: 0;
+    .frame-wrap {
       width: 100%;
-      height: 100vh;
+      height: 400px;          /* visible bottom area height */
+      overflow: hidden;       /* hides top part */
+      position: relative;
+    }
+
+    .frame-wrap iframe {
+      width: 100%;
+      height: 1200px;         /* taller than container */
       border: 0;
+      position: absolute;
+      top: -800px;            /* shift up to reveal bottom */
+      left: 0;
     }
   </style>
 </head>
 <body>
 
-  <iframe
-    src="https://link.me/ava.xo"
-    allow="fullscreen; autoplay"
-    allowfullscreen>
-  </iframe>
-
-  <script>
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        window.scrollTo({
-          top: 600,
-          behavior: "smooth"
-        });
-      }, 3000);
-    });
-  </script>
+  <div class="frame-wrap">
+    <iframe
+      src="https://link.me/ava.xo"
+      allow="fullscreen; autoplay"
+      allowfullscreen>
+    </iframe>
+  </div>
 
 </body>
 </html>
