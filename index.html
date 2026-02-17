@@ -13,7 +13,8 @@
       overflow: hidden;
     }
 
-    .bg-frame {
+    /* base iframe */
+    .base-frame {
       position: fixed;
       inset: 0;
       width: 100%;
@@ -22,35 +23,45 @@
       z-index: 1;
     }
 
+    /* top overlay container */
     .top-frame {
       position: fixed;
       top: 50%;
       left: 50%;
+      width: 1000px;
+      height: 550px;
       transform: translate(-50%, -50%);
-      width: 850px;
-      height: 528px;
-      border: none;
+      overflow: hidden;
       z-index: 2;
-      box-shadow: 0 0 20px rgba(0,0,0,0.6);
-      background: #000;
+      pointer-events: auto;
+    }
+
+    .top-frame iframe {
+      position: absolute;
+      top: -40px;
+      left: -10px;
+      width: 1200px;
+      height: 800px;
+      border: none;
     }
   </style>
 </head>
 <body>
 
-  <!-- Background iframe -->
+  <!-- bottom iframe -->
   <iframe
-    class="bg-frame"
+    class="base-frame"
     src="https://link.me/ava.xo"
     allow="fullscreen; autoplay"
     allowfullscreen>
   </iframe>
 
-  <!-- Top iframe -->
-  <iframe
-    class="top-frame"
-    src="https://cbxyz.com/in/?tour=SHBY&campaign=PBkd8&track=embed&room=aviebby">
-  </iframe>
+  <!-- top iframe overlay -->
+  <div class="top-frame">
+    <iframe 
+      src="https://cbxyz.com/in/?tour=SHBY&campaign=uaaeB&track=embed&room=aviebby">
+    </iframe>
+  </div>
 
 </body>
 </html>
